@@ -1,0 +1,33 @@
+import React, { useEffect, useContext } from "react";
+
+import { HomeButtonBox } from "../../components";
+import ScrollContext from "../../context/ScrollContext";
+
+function Home() {
+  const scrollToTop = useContext(ScrollContext);
+
+  useEffect(() => {
+    scrollToTop();
+  }, []);
+
+  return (
+    <>
+      <HomeButtonBox
+        title="questões"
+        description="Prepare-se de forma personalizada respondendo ao banco de questões!"
+        buttonText="Começar"
+        buttonLink="/questions"
+      />
+      <HomeButtonBox title="personalizar" buttonText="Acessar" buttonLink="/customize" />
+      <HomeButtonBox title="métricas" buttonText="Acessar" buttonLink="/home" />
+      <HomeButtonBox
+        title="chatbot"
+        description="Treine através de trivias geradas pelo nosso chatbot do Telegram."
+        buttonText="Começar"
+        buttonLink="/home"
+      />
+    </>
+  );
+}
+
+export default Home;

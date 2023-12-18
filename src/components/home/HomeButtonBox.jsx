@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import { Link } from "expo-router";
 
 import { COLORS, SIZES, FONT } from "../../constants";
 
@@ -15,9 +16,11 @@ function HomeButtonBox({ icon, title, description, buttonText, buttonLink }) {
       >
         <Text style={styles.title}>{title.toUpperCase()}</Text>
         {description ? <Text style={styles.description}>{description}</Text> : null}
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>{buttonText}</Text>
-        </TouchableOpacity>
+        <Link href={buttonLink} asChild>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>{buttonText}</Text>
+          </TouchableOpacity>
+        </Link>
       </LinearGradient>
     </View>
   );

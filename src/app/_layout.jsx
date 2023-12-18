@@ -1,16 +1,35 @@
-import React from "react";
-import { Stack } from "expo-router";
+import React, { useEffect, useRef, useCallback, useState } from "react";
+import { StatusBar, View, SafeAreaView, StyleSheet, Platform, ScrollView } from "react-native";
+import { Slot } from "expo-router";
 import { useFonts } from "expo-font";
 
 import PoppinsRegular from "../assets/fonts/Poppins-Regular.ttf";
 import PoppinsMedium from "../assets/fonts/Poppins-Medium.ttf";
 import PoppinsBold from "../assets/fonts/Poppins-Bold.ttf";
 
-// export const unstable_settings = {
-//   initialRouteName: "home",
-// };
+import { Footer, Header } from "../components";
+import { COLORS, SIZES } from "../constants";
+import ScrollContext from "../context/ScrollContext";
+import QuestionContext from "../context/QuestionContext";
 
 function Layout() {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const contextValue = React.useMemo(
+    () => ({ currentQuestion, setCurrentQuestion }),
+    [currentQuestion, setCurrentQuestion]
+  );
+
+  const scrollRef = useRef();
+  const scrollToTop = useCallback(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({ x: 0, y: 0, animated: false });
+    }
+  }, []);
+
+  useEffect(() => {
+    StatusBar.setBarStyle("light-content");
+  }, []);
+
   const [fontsLoaded] = useFonts({
     "Poppins-Regular": PoppinsRegular,
     "Poppins-Medium": PoppinsMedium,
@@ -22,10 +41,41 @@ function Layout() {
   }
 
   return (
-    <Stack initialRouteName="home">
-      <Stack.Screen name="home" />
-    </Stack>
+    <QuestionContext.Provider value={contextValue}>
+      <View style={styles.mainView}>
+        <Header />
+        <SafeAreaView style={styles.safeAreaView}>
+          <ScrollContext.Provider value={scrollToTop}>
+            <ScrollView showsVerticalScrollIndicator={false} ref={scrollRef}>
+              <View style={styles.view}>
+                <Slot initialRouteName="home" />
+              </View>
+            </ScrollView>
+          </ScrollContext.Provider>
+        </SafeAreaView>
+        <Footer />
+      </View>
+    </QuestionContext.Provider>
   );
 }
+
+const styles = StyleSheet.create({
+  mainView: {
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    flex: 1,
+    backgroundColor: COLORS.black,
+  },
+  safeAreaView: {
+    flex: 1,
+    backgroundColor: COLORS.backgroundWhite,
+    borderRadius: 12,
+  },
+  view: {
+    flex: 1,
+    paddingTop: SIZES.large,
+    paddingBottom: 2,
+    paddingHorizontal: SIZES.large,
+  },
+});
 
 export default Layout;
