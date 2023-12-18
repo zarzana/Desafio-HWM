@@ -2,7 +2,7 @@ import { React } from "react";
 import { Link } from "expo-router";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
-import { COLORS, FONT, SIZES, icons } from "../constants";
+import { COLORS, FONT, icons } from "../constants";
 
 function Menu({ title }) {
   return (
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: COLORS.black,
     borderRadius: 8,
-    paddingHorizontal: SIZES.small,
+    paddingHorizontal: 12,
   },
   backButton: {
     height: 28,
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   backButoonText: {
     height: 30,
     fontFamily: FONT.regular,
-    fontSize: SIZES.small,
+    fontSize: 12,
     lineHeight: 28,
   },
   menuTitle: {

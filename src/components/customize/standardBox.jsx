@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-import { COLORS, SIZES, FONT } from "../../constants";
+import { COLORS, FONT } from "../../constants";
 
 function StandardBox({ text, children }) {
   return (
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   sectionBox: {
     backgroundColor: COLORS.gray,
     borderRadius: 8,
-    padding: SIZES.small,
+    padding: 12,
     marginTop: 20,
     shadowColor: "rgba(0, 0, 0, 0.2)", // iOS
     shadowOffset: { width: 3, height: 2 }, // iOS
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: FONT.bold,
-    fontSize: SIZES.large,
+    fontSize: 16,
     color: COLORS.black,
   },
 });

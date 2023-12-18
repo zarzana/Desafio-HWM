@@ -8,7 +8,7 @@ import PoppinsMedium from "../assets/fonts/Poppins-Medium.ttf";
 import PoppinsBold from "../assets/fonts/Poppins-Bold.ttf";
 
 import { Footer, Header } from "../components";
-import { COLORS, SIZES } from "../constants";
+import { COLORS } from "../constants";
 import ScrollContext from "../context/ScrollContext";
 import QuestionContext from "../context/QuestionContext";
 
@@ -80,9 +80,9 @@ const styles = StyleSheet.create({
   },
   view: {
     flex: 1,
-    paddingTop: SIZES.large,
+    paddingTop: 16,
     paddingBottom: 2,
-    paddingHorizontal: SIZES.large,
+    paddingHorizontal: 16,
   },
 });
 

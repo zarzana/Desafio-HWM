@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Text, StyleSheet, View, ScrollView } from "react-native";
 
-import { COLORS, FONT, SIZES } from "../../constants";
+import { COLORS, FONT } from "../../constants";
 
 function QuestionTracker({ currentQuestion, totalQuestions, offset = 0 }) {
   const scrollViewRef = useRef();
@@ -85,18 +85,18 @@ const styles = StyleSheet.create({
   },
   smallerText: {
     fontFamily: FONT.medium,
-    fontSize: SIZES.large,
+    fontSize: 16,
     lineHeight: 28,
     color: COLORS.black,
   },
   equalText: {
     lineHeight: 40,
     fontFamily: FONT.bold,
-    fontSize: SIZES.xLarge,
+    fontSize: 24,
   },
   biggerText: {
     fontFamily: FONT.medium,
-    fontSize: SIZES.large,
+    fontSize: 16,
   },
   separator: {
     fontSize: 18,

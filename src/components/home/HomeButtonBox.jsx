@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
 
-import { COLORS, SIZES, FONT } from "../../constants";
+import { COLORS, FONT } from "../../constants";
 
 function HomeButtonBox({ icon, title, description, buttonText, buttonLink }) {
   return (
@@ -35,13 +35,13 @@ const styles = StyleSheet.create({
   },
   title: {
     color: COLORS.white,
-    fontSize: SIZES.xLarge,
+    fontSize: 24,
     fontFamily: FONT.bold,
   },
   description: {
     color: COLORS.white,
     fontFamily: FONT.medium,
-    fontSize: SIZES.medium,
+    fontSize: 14,
     lineHeight: 16,
     textShadowColor: "rgba(0, 0, 0, 0.9)",
     textShadowOffset: { width: 1, height: 1 },
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: COLORS.black,
     fontFamily: FONT.medium,
-    fontSize: SIZES.large,
+    fontSize: 16,
   },
 });
 

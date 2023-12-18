@@ -1,7 +1,7 @@
 import { React } from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
-import { COLORS, FONT, SIZES } from "../../constants";
+import { COLORS, FONT } from "../../constants";
 
 function Answer({ letter, content, selectedAnswer, setSelectedAnswer }) {
   const isSelected = selectedAnswer === letter;
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     marginLeft: 4,
     marginRight: 12,
     fontFamily: FONT.bold,
-    fontSize: SIZES.xLarge,
+    fontSize: 24,
     color: COLORS.black,
     lineHeight: 32,
   },
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   answer: {
     flex: 1,
     fontFamily: FONT.regular,
-    fontSize: SIZES.xSmall,
+    fontSize: 10,
     color: COLORS.black,
     lineHeight: 14,
   },

@@ -1,9 +1,9 @@
-import { View, StyleSheet, TouchableOpacity, Text, Image, Platform } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Text, Image } from "react-native";
 import React, { useEffect, useContext, useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import MultiSlider from "@ptomasroos/react-native-multi-slider";
 
-import { COLORS, FONT, SIZES, images } from "../../constants";
+import { COLORS, FONT, images } from "../../constants";
 import { Menu, SwitchBox, StandardBox, SelectSearch } from "../../components";
 import ScrollContext from "../../context/ScrollContext";
 
@@ -118,9 +118,9 @@ const styles = StyleSheet.create({
   },
   view: {
     flex: 1,
-    paddingTop: SIZES.large,
+    paddingTop: 16,
     paddingBottom: 2,
-    paddingHorizontal: SIZES.large,
+    paddingHorizontal: 16,
   },
   sliderContainer: {
     flexDirection: "row",
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
   },
   sliderText: {
     fontFamily: FONT.bold,
-    fontSize: SIZES.regular,
+    fontSize: 14,
     color: COLORS.white,
     lineHeight: 20,
   },
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
   },
   startButtonText: {
     fontFamily: FONT.bold,
-    fontSize: SIZES.regular,
+    fontSize: 14,
     color: COLORS.black,
     textAlign: "center",
     paddingVertical: 8,

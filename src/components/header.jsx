@@ -2,7 +2,7 @@ import { React } from "react";
 import { Link } from "expo-router";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
-import { COLORS, FONT, SIZES, icons, images } from "../constants";
+import { COLORS, FONT, icons, images } from "../constants";
 
 function Header() {
   return (
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 2,
     fontFamily: FONT.bold,
-    fontSize: SIZES.small,
+    fontSize: 12,
   },
   headerRightView: {
     display: "flex",
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   homeText: {
     color: COLORS.white,
     fontFamily: FONT.bold,
-    fontSize: SIZES.small,
+    fontSize: 12,
     textAlignVertical: "center",
     marginTop: 4,
     marginLeft: 6,

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native";
 
-import { COLORS, SIZES, FONT } from "../../constants";
+import { COLORS, FONT } from "../../constants";
 import { SelectionBox } from "../../components";
 
 function SelectSearch({ placeholder, content }) {
@@ -72,12 +72,12 @@ function getStyles(coords) {
     },
     input: {
       fontFamily: FONT.regular,
-      fontSize: SIZES.medium,
+      fontSize: 14,
       color: COLORS.black,
     },
     examples: {
       fontFamily: FONT.regular,
-      fontSize: SIZES.xSmall,
+      fontSize: 10,
       color: COLORS.darkGray,
       lineHeight: 12,
     },

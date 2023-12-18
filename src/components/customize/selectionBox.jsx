@@ -1,7 +1,7 @@
-import React, { useState, useRef } from "react";
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-import { COLORS, SIZES, FONT } from "../../constants";
+import { COLORS, FONT } from "../../constants";
 
 function SelectionBox({ text }) {
   const [isSelected, setIsSelected] = useState(false);
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   },
   selectionText: {
     fontFamily: FONT.medium,
-    fontSize: SIZES.medium,
+    fontSize: 14,
     color: COLORS.black,
     marginTop: 2,
   },

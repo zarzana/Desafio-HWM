@@ -20,13 +20,4 @@ const FONT = {
   bold: "Poppins-Bold",
 };
 
-const SIZES = {
-  xSmall: 10,
-  small: 12,
-  medium: 14,
-  large: 16,
-  xLarge: 24,
-  xxLarge: 32,
-};
-
-export { COLORS, FONT, SIZES };
+export { COLORS, FONT };

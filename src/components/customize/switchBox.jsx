@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 import SwitchCustom from "expo-custom-switch";
 import { LogBox } from "react-native";
 
-import { COLORS, SIZES, FONT } from "../../constants";
+import { COLORS, FONT } from "../../constants";
 
 function SwitchBox({ title, initialState }) {
   const [isEnabled, setIsEnabled] = useState(initialState);
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: FONT.bold,
-    fontSize: SIZES.medium,
+    fontSize: 14,
     color: COLORS.black,
     lineHeight: 18,
   },

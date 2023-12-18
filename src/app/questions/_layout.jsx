@@ -2,7 +2,7 @@ import { View, StyleSheet, TouchableOpacity, Text, ActivityIndicator } from "rea
 import React, { useEffect, useContext, useState } from "react";
 import axios from "axios";
 
-import { COLORS, FONT, SIZES } from "../../constants";
+import { COLORS, FONT } from "../../constants";
 import { Menu, Answer, QuestionTracker } from "../../components";
 import ScrollContext from "../../context/ScrollContext";
 import QuestionContext from "../../context/QuestionContext";
@@ -87,20 +87,20 @@ function Questions() {
 const styles = StyleSheet.create({
   view: {
     flex: 1,
-    paddingTop: SIZES.large,
+    paddingTop: 16,
     paddingBottom: 2,
-    paddingHorizontal: SIZES.large,
+    paddingHorizontal: 16,
   },
   questionBox: {
     backgroundColor: COLORS.black,
     borderRadius: 12,
-    padding: SIZES.medium,
-    marginTop: SIZES.large,
+    padding: 14,
+    marginTop: 16,
     elevation: 10,
   },
   question: {
     fontFamily: FONT.medium,
-    fontSize: SIZES.regular,
+    fontSize: 14,
     color: COLORS.white,
     lineHeight: 16,
   },
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   },
   confirmText: {
     fontFamily: FONT.medium,
-    fontSize: SIZES.regular,
+    fontSize: 14,
     color: COLORS.black,
     textAlign: "center",
     paddingVertical: 8,

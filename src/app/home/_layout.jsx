@@ -4,8 +4,6 @@ import { View, StyleSheet } from "react-native";
 import { HomeButtonBox } from "../../components";
 import ScrollContext from "../../context/ScrollContext";
 
-import { SIZES } from "../../constants";
-
 function Home() {
   const { scrollToTop, setScrollEnable } = useContext(ScrollContext);
 
@@ -36,9 +34,9 @@ function Home() {
 const styles = StyleSheet.create({
   view: {
     flex: 1,
-    paddingTop: SIZES.large,
+    paddingTop: 16,
     paddingBottom: 2,
-    paddingHorizontal: SIZES.large,
+    paddingHorizontal: 16,
   },
 });
 

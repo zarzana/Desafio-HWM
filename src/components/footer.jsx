@@ -2,7 +2,7 @@ import { React } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { Link } from "expo-router";
 
-import { COLORS, SIZES, images } from "../constants";
+import { COLORS, images } from "../constants";
 
 function Footer() {
   return (
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     height: 60,
-    padding: SIZES.small,
+    padding: 12,
     backgroundColor: COLORS.black,
   },
   footerLogo: {
