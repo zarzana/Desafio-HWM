@@ -9,7 +9,7 @@ import QuestionContext from "../../context/QuestionContext";
 
 function Questions() {
   const { currentQuestion, setCurrentQuestion } = useContext(QuestionContext);
-  const scrollToTop = useContext(ScrollContext);
+  const { scrollToTop, setScrollEnable } = useContext(ScrollContext);
 
   useEffect(() => {
     scrollToTop();
@@ -50,7 +50,7 @@ function Questions() {
   }
 
   return (
-    <>
+    <View style={styles.view}>
       <Menu title="Questões" />
       <View style={styles.questionBox}>
         <Text style={styles.question}>
@@ -80,20 +80,11 @@ function Questions() {
           offset={120}
         />
       </View>
-    </>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  mainView: {
-    flex: 1,
-    backgroundColor: COLORS.black,
-  },
-  safeAreaView: {
-    flex: 1,
-    backgroundColor: COLORS.backgroundWhite,
-    borderRadius: 12,
-  },
   view: {
     flex: 1,
     paddingTop: SIZES.large,

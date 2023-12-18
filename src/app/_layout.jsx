@@ -14,6 +14,7 @@ import QuestionContext from "../context/QuestionContext";
 
 function Layout() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [scrollEnable, setScrollEnable] = useState(true);
   const contextValue = React.useMemo(
     () => ({ currentQuestion, setCurrentQuestion }),
     [currentQuestion, setCurrentQuestion]
@@ -44,12 +45,15 @@ function Layout() {
     <QuestionContext.Provider value={contextValue}>
       <View style={styles.mainView}>
         <Header />
+
         <SafeAreaView style={styles.safeAreaView}>
-          <ScrollContext.Provider value={scrollToTop}>
-            <ScrollView showsVerticalScrollIndicator={false} ref={scrollRef}>
-              <View style={styles.view}>
-                <Slot initialRouteName="home" />
-              </View>
+          <ScrollContext.Provider value={{ scrollToTop, setScrollEnable }}>
+            <ScrollView
+              showsVerticalScrollIndicator={false}
+              ref={scrollRef}
+              scrollEnabled={scrollEnable}
+            >
+              <Slot initialRouteName="home" />
             </ScrollView>
           </ScrollContext.Provider>
         </SafeAreaView>
@@ -60,6 +64,10 @@ function Layout() {
 }
 
 const styles = StyleSheet.create({
+  gradient: {
+    flex: 1,
+    borderRadius: 12,
+  },
   mainView: {
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     flex: 1,

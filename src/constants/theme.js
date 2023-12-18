@@ -10,6 +10,8 @@ const COLORS = {
 
   purple: "#B35CC3",
   pink: "#FF337E",
+  green: "#2CEA18",
+  darkGreen: "#09AB01",
 };
 
 const FONT = {

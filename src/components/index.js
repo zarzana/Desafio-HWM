@@ -11,5 +11,19 @@ import QuestionTracker from "./questions/questionTracker";
 
 // customize
 import StandardBox from "./customize/standardBox";
+import SwitchBox from "./customize/switchBox";
+import SelectSearch from "./customize/selectSearch";
+import SelectionBox from "./customize/selectionBox";
 
-export { Header, Footer, Menu, HomeButtonBox, Answer, QuestionTracker, StandardBox };
+export {
+  Header,
+  Footer,
+  Menu,
+  HomeButtonBox,
+  Answer,
+  QuestionTracker,
+  StandardBox,
+  SwitchBox,
+  SelectSearch,
+  SelectionBox,
+};

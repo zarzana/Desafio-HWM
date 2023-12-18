@@ -19,6 +19,7 @@
     "no-use-before-define": ["error", { "variables": false }],
     "react/prop-types": "off",
     "react/no-unstable-nested-components": "off",
-    "react-hooks/exhaustive-deps": "off"
+    "react-hooks/exhaustive-deps": "off",
+    "no-extraneous-dependencies": "on"
   }
 }
