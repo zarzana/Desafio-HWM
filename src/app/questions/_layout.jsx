@@ -11,10 +11,6 @@ function Questions() {
   const { currentQuestion, setCurrentQuestion } = useContext(QuestionContext);
   const { scrollToTop, setScrollEnable } = useContext(ScrollContext);
 
-  useEffect(() => {
-    scrollToTop();
-  }, []);
-
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [questions, setQuestions] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -32,7 +28,10 @@ function Questions() {
       });
   };
 
-  useEffect(getRecords, []);
+  useEffect(() => {
+    scrollToTop();
+    getRecords();
+  }, []);
 
   function numberToLetter(number) {
     const letters = ["A", "B", "C", "D"];
