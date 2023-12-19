@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native";
 
 import { COLORS, FONT } from "../../constants";
-import { SelectionBox } from "../../components";
+import SelectionBox from "./selectionBox";
 
 function SelectSearch({ placeholder, content }) {
   const formattedContent = content.slice(0, 4).join(", ") + "...";
